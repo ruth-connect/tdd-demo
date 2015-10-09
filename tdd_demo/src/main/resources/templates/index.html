@@ -43,17 +43,109 @@
 				<h3>Ruth Mills</h3>
 				<h4>Java Lead Developer, Connect Group</h4>
 			</div>
+			
+			<div class="slide">
+				<h1>Why TDD?</h1>
+				<ul>
+					<li>Encourages simple designs and Clean Code</li>
+					<li>Makes you think about what you are about to code before you do it</li>
+					<li>Ensures that you test error conditions as well as the "happy path"</li>
+					<li>Reduces bugs in the code and improves code quality</li>
+					<li>Reduces risk when refactoring</li>
+					<li>Works in tandem with Behaviour-Driven Development (BDD)</li>
+					<li>Catches most issues at build time, before the code has a chance to go live</li>
+				</ul>
+			</div>
 				
 			<div class="slide">
-				<h1>TDD in a nutshell</h1>
-				<ul class="incremental">
+				<h1>The TDD Process</h1>
+				<ul>
 					<li>Add a test (but not the actual code)</li>
-					<li>Run all tests and make sure the new one fails</li>
+					<li>Run all tests and make sure the new test fails</li>
 					<li>Write some code to pass the new test</li>
-					<li>Run all tests and make sure all tests pass</li>
-					<li>(Optionally) Refactor the code</li>
-					<li>then run all tests again and make sure all tests pass</li>
+					<li>Run all tests and make sure all tests now pass</li>
+					<li>Refactor the code (using Clean Code principles)</li>
+					<li>Run all tests again and make sure all tests still pass</li>
 					<li>Repeat</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Writing Tests</h1>
+				<ul>
+					<li>Test method names should be self-explanatory, e.g. shouldDoSomething_whenSomeConditionIsMet</li>
+					<li>If using BDD, you can use tools such as <a href="https://cucumber.io/" target="_blank">Cucumber</a> or <a href="http://www.fitnesse.org/" target="_blank">FitNesse</a> to generate test names from the BDD acceptance criteria</li>
+					<li>Each test should be as simple as possible, ideally testing only one condition</li>
+					<li>Each test should therefore have only one assertion</li>
+					<li>e.g. assertThat(actualValue, equalTo(expectedValue));
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Hamcrest Matchers</h1>
+				<ul>
+					<li><a href="http://hamcrest.org/" target="_blank">Hamcrest</a> is a great library for writing test assertions</li>
+					<li>With Hamcrest, assertions are written declaratively, not procedurally</li>
+					<li>This makes assertions easier to read and understand</li>
+					<li>Easy to write logical conditions, e.g. and, or and not</li>
+					<li>Easy to iterate over collections, e.g. lists and sets</li>
+					<li>Error messages displayed when a test fails are also easier to read</li>
+					<li>Hamcrest is available for Java, Python, Ruby, Objective-C, PHP, Erlang and Swift</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Using Mocks</h1>
+				<ul>
+					<li>TDD should be <b><i>unit</i></b> testing, not <b><i>integration</i></b> testing</li>
+					<li>Use mocking instead of relying on external dependencies, e.g. databases</li>
+					<li>Create mocked classes which can be used in place of actual dependency</li>
+					<li>Use a mock to define what the dependency would do if called, e.g. return some data or throw an exception</li>
+					<li>Test all scenarios that your code should handle, including errors</li>
+					<li>Tests should run standalone, e.g. not needing a database connection</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Refactoring Tests</h1>
+				<ul>
+					<li>Refactoring is a good idea for tests as well as for the code you are testing</li>
+					<li>Test suites should also benefit from Clean Code and DRY (Don't Repeat Yourself)</li>
+					<li>If more than one test depends on the same setup criteria, refactor this into a separate method instead of copy and pasting</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Code Coverage</h1>
+				<ul>
+					<li>Tools are available that check you have tested all your code</li>
+					<li>e.g. Cobertura and Emma</li>
+					<li>Ideally you should have 100% test coverage if possible</li>
+					<li>All classes, methods, lines and conditionals should be covered</li>
+					<li>Code coverage should ideally run as part of your Continuous Integration (CI) build, e.g. Jenkins, Hudson or Travis</li>
+					<li>You can configure your CI server to fail a build if the code coverage falls below a set percentage</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Further Resources</h1>
+				<ul>
+					<li>TDD presentation on GitHub - <a href="https://github.com/ruth-connect/tdd-demo" target="_blank">https://github.com/ruth-connect/tdd-demo</a></li>
+					<li>JUnit - <a href="http://junit.org/" target="_blank">http://junit.org/</a></li>
+					<li>Cucumber - <a href="https://cucumber.io/" target="_blank">https://cucumber.io/</a></li>
+					<li>FitNesse - <a href="http://www.fitnesse.org/" target="_blank">http://www.fitnesse.org/</a></li>
+					<li>Hamcrest - <a href="http://hamcrest.org/" target="_blank">http://hamcrest.org/</a></li>
+					<li>Mockito - <a href="http://mockito.org/" target="_blank">http://mockito.org/</a></li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Further Resources</h1>
+				<ul>
+					<li>Agile Staffordshire Thymeleaf workshop - <a href="https://github.com/agilestaffordshire/thymeleaf-and-thymesheet" target="_blank">https://github.com/agilestaffordshire/thymeleaf-and-thymesheet</a>
+					<li>Thymeleaf TDD - <a href="http://connect-group.github.io/thymeleaf-tdd/" target="_blank">http://connect-group.github.io/thymeleaf-tdd/</a>
+					<li>Thymesheet - <a href="https://github.com/connect-group/thymesheet" target="_blank">https://github.com/connect-group/thymesheet</a></li>
+					<li>Mocha - <a href="https://mochajs.org/" target="_blank">https://mochajs.org/</a></li>
 				</ul>
 			</div>
 
