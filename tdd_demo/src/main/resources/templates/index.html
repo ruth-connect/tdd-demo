@@ -47,12 +47,12 @@
 			<div class="slide">
 				<h1>Why TDD?</h1>
 				<ul>
-					<li>Encourages simple designs and Clean Code</li>
+					<li>Encourages simple designs and <a href="http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a></li>
 					<li>Makes you think about what you are about to code before you do it</li>
 					<li>Ensures that you test error conditions as well as the "happy path"</li>
 					<li>Reduces bugs in the code and improves code quality</li>
-					<li>Reduces risk when refactoring</li>
-					<li>Works in tandem with Behaviour-Driven Development (BDD)</li>
+					<li>Reduces risk when <a href="https://en.wikipedia.org/wiki/Code_refactoring" target="_blank">refactoring</a></li>
+					<li>Works in tandem with <a href="https://en.wikipedia.org/wiki/Behavior-driven_development" target="_blank">Behaviour-Driven Development (BDD)</a></li>
 					<li>Catches most issues at build time, before the code has a chance to go live</li>
 				</ul>
 			</div>
@@ -61,11 +61,11 @@
 				<h1>The TDD Process</h1>
 				<ul>
 					<li>Add a test (but not the actual code)</li>
-					<li>Run all tests and make sure the new test fails</li>
+					<li>Run all tests and make sure the new test fails <b><i style="color: #FF0000;">(Red Bar)</i></b></li>
 					<li>Write some code to pass the new test</li>
-					<li>Run all tests and make sure all tests now pass</li>
-					<li>Refactor the code (using Clean Code principles)</li>
-					<li>Run all tests again and make sure all tests still pass</li>
+					<li>Run all tests and make sure all tests now pass <b><i style="color: #00C000;">(Green Bar)</i></b></li>
+					<li>Refactor the code (using <a href="http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a> principles)</li>
+					<li>Run all tests again and make sure all tests still pass <b><i style="color: #00C000;">(Green Bar)</i></b></li>
 					<li>Repeat</li>
 				</ul>
 			</div>
@@ -77,7 +77,7 @@
 					<li>If using BDD, you can use tools such as <a href="https://cucumber.io/" target="_blank">Cucumber</a> or <a href="http://www.fitnesse.org/" target="_blank">FitNesse</a> to generate test names from the BDD acceptance criteria</li>
 					<li>Each test should be as simple as possible, ideally testing only one condition</li>
 					<li>Each test should therefore have only one assertion</li>
-					<li>e.g. assertThat(actualValue, equalTo(expectedValue));
+					<li>e.g. <i>assertThat(actualValue, equalTo(expectedValue));</i>
 				</ul>
 			</div>
 			
@@ -95,6 +95,12 @@
 			</div>
 			
 			<div class="slide">
+				<h1>Hamcrest Examples</h1>
+				<ul>
+				</ul>
+			</div>
+			
+			<div class="slide">
 				<h1>Using Mocks</h1>
 				<ul>
 					<li>TDD should be <b><i>unit</i></b> testing, not <b><i>integration</i></b> testing</li>
@@ -107,11 +113,38 @@
 			</div>
 			
 			<div class="slide">
+				<h1>Mockito</h1>
+				<ul>
+					<li><a href="http://mockito.org/" target="_blank">Mockito</a> is a mocking framework for Java (there's also <a href="http://jsmockito.org/" target="_blank">JsMockito</a> for JS)</li>
+					<li>Mocks are very easy to create - e.g. <i>MyClass myMock = mock(MyClass.class);</i></li>
+					<li>Once you have a mock, you can then tell it how to behave when you call methods on it</li>
+					<li>e.g. <i>when(myMock.doSomething()).thenReturn(someObject);</i></li>
+					<li>or: <i>when(myMock.doSomething()).thenThrow(someException);</i></li>
+					<li>When writing your tests, inject the mock into the object you are testing instead of the real dependency</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
 				<h1>Refactoring Tests</h1>
 				<ul>
 					<li>Refactoring is a good idea for tests as well as for the code you are testing</li>
-					<li>Test suites should also benefit from Clean Code and DRY (Don't Repeat Yourself)</li>
+					<li>Test suites should also benefit from <a href="http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a> and <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY (Don't Repeat Yourself)</a></li>
 					<li>If more than one test depends on the same setup criteria, refactor this into a separate method instead of copy and pasting</li>
+					<li>Setup code common to <b><i>all</i></b> tests should go in a dedicated setup method, e.g. in JUnit, this would be annotated with @Before</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>HTML Data Bindings</h1>
+				<ul>
+					<li>Some HTML templating engines support a TDD approach for binding data from your view objects to your HTML</li>
+					<li>e.g. <a href="http://www.thymeleaf.org/" target="_blank">Thymeleaf</a> has a <a href="http://connect-group.github.io/thymeleaf-tdd/" target="_blank">TDD framework</a> that can be used for testing Thymeleaf and <a href="http://connect-group.github.io/thymesheet/" target="_blank">Thymesheet</a> data bindings</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Front-End Testing</h1>
+				<ul>
 				</ul>
 			</div>
 			
@@ -119,7 +152,7 @@
 				<h1>Code Coverage</h1>
 				<ul>
 					<li>Tools are available that check you have tested all your code</li>
-					<li>e.g. Cobertura and Emma</li>
+					<li>e.g. <a href="http://cobertura.github.io/cobertura/" target="_blank">Cobertura</a> and <a href="http://emma.sourceforge.net/" target="_blank">Emma</a></li>
 					<li>Ideally you should have 100% test coverage if possible</li>
 					<li>All classes, methods, lines and conditionals should be covered</li>
 					<li>Code coverage should ideally run as part of your Continuous Integration (CI) build, e.g. Jenkins, Hudson or Travis</li>
@@ -136,15 +169,18 @@
 					<li>FitNesse - <a href="http://www.fitnesse.org/" target="_blank">http://www.fitnesse.org/</a></li>
 					<li>Hamcrest - <a href="http://hamcrest.org/" target="_blank">http://hamcrest.org/</a></li>
 					<li>Mockito - <a href="http://mockito.org/" target="_blank">http://mockito.org/</a></li>
+					<li>JsMockito - <a href="http://jsmockito.org/" target="_blank">http://jsmockito.org/</a>
 				</ul>
 			</div>
 			
 			<div class="slide">
 				<h1>Further Resources</h1>
 				<ul>
+					<li>Cobertura - <a href="http://cobertura.github.io/cobertura/" target="_blank">http://cobertura.github.io/cobertura/</a></li>
+					<li>Emma - <a href="http://emma.sourceforge.net/" target="_blank">http://emma.sourceforge.net/</a></li>
 					<li>Agile Staffordshire Thymeleaf workshop - <a href="https://github.com/agilestaffordshire/thymeleaf-and-thymesheet" target="_blank">https://github.com/agilestaffordshire/thymeleaf-and-thymesheet</a>
 					<li>Thymeleaf TDD - <a href="http://connect-group.github.io/thymeleaf-tdd/" target="_blank">http://connect-group.github.io/thymeleaf-tdd/</a>
-					<li>Thymesheet - <a href="https://github.com/connect-group/thymesheet" target="_blank">https://github.com/connect-group/thymesheet</a></li>
+					<li>Thymesheet - <a href="http://connect-group.github.io/thymesheet/" target="_blank">https://github.com/connect-group/thymesheet</a></li>
 					<li>Mocha - <a href="https://mochajs.org/" target="_blank">https://mochajs.org/</a></li>
 				</ul>
 			</div>
