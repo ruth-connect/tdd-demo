@@ -17,4 +17,4 @@ SETUP INSTRUCTIONS:
 
 (c) Start the application: java -jar target/tdd_demo-0.0.1-SNAPSHOT.jar
 
-(4) Go to http://localhost:8080/ to view the demo
+(4) Go to http://localhost:8080/ to view the slide deck
