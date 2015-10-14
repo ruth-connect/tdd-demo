@@ -113,6 +113,12 @@
 			<div class="slide">
 				<h1>Hamcrest Examples</h1>
 				<ul>
+					<li>Test that something is equal to an expected value - <i>equalTo(expectedValue)</i></li>
+					<li>Test that something is not equal to an expected value - <i>not(equalTo(expectedValue()))</i></li>
+					<li>Test that something has a null value - <i>nullValue()</i></li>
+					<li>Test that something has a non-null value - <i>notNullValue()</i></li>
+					<li>Test that a collection has an expected size - <i>hasSize(expectedSize)</i></li>
+					<li>Test that all elements in a collection are not null - <i>everyItem(notNullValue())</i></li>
 				</ul>
 			</div>
 			
@@ -147,6 +153,7 @@
 					<li>Test suites should also benefit from <a href="http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882" target="_blank">Clean Code</a> and <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank">DRY (Don't Repeat Yourself)</a></li>
 					<li>If more than one test depends on the same setup criteria, refactor this into a separate method instead of copy and pasting</li>
 					<li>Setup code common to <b><i>all</i></b> tests should go in a dedicated setup method, e.g. in JUnit, this would be annotated with @Before</li>
+					<li>Expected values are best extracted out as constants rather than hard-coded within each test method</li>
 				</ul>
 			</div>
 			
@@ -155,12 +162,40 @@
 				<ul>
 					<li>Some HTML templating engines support a TDD approach for binding data from your view objects to your HTML</li>
 					<li>e.g. <a href="http://www.thymeleaf.org/" target="_blank">Thymeleaf</a> has a <a href="http://connect-group.github.io/thymeleaf-tdd/" target="_blank">TDD framework</a> that can be used for testing Thymeleaf and <a href="http://connect-group.github.io/thymesheet/" target="_blank">Thymesheet</a> data bindings</li>
+					<li><i>@Test<br/>
+					public void shouldOutputCarMake_WhenCarMakeIsSet() {<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;model.put("carMake", "Jaguar");<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;HtmlElements tags = selectorEngine.process(HTML_PATH, model);<br/>
+					&nbsp;&nbsp;&nbsp;&nbsp;assertThat(tags.matching("h2"), isSingleElementThat(hasOnlyText("Jaguar")));<br/>
+					}</i>
+					</li>
 				</ul>
 			</div>
 			
 			<div class="slide">
-				<h1>Front-End Testing</h1>
+				<h1>Thymeleaf Matchers</h1>
 				<ul>
+					<li><i>exists</i> - checks if an element exists (does not matter if once or more than once)</li>
+					<li><i>hasAttribute</i> - checks if an element has a particular attribute</li>
+					<li><i>hasChildren</i> - checks if an element has child elements</li>
+					<li><i>hasOnlyText</i> - checks if an element contains only text (so no child elements as well)</li>
+					<li><i>isSingleElementThat</i> - checks if an element only occurs once, and matches a Hamcrest matcher nested inside it</li>
+					<li><i>occursOnce</i> - checks if an element only occurs once</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>Front-End JS Testing</h1>
+				<ul>
+					<li>It's also possible to do TDD on the front end, e.g. using frameworks such as <a href="https://mochajs.org/" target="_blank">Mocha</a>, where a typical Mocha test might be:</li>
+					<li><i>describe('Array', function() {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;describe('#indexOf()', function() {<br/>
+    					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it('should return -1 when the value is not present', function() {<br/>
+      					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1,2,3].indexOf(5).should.equal(-1);<br/>
+      					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[1,2,3].indexOf(0).should.equal(-1);<br/>
+    					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br/>
+  						&nbsp;&nbsp;&nbsp;&nbsp;});<br/>
+						});</i>
 				</ul>
 			</div>
 			

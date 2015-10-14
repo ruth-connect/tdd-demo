@@ -31,7 +31,7 @@ sup {font-size: smaller; line-height: 1px;}
 .slide img.leader {display: block; margin: 0 auto;}
 
 div#header, div#footer {background: #292B30; color: #3B9BDE;}
-div#header {line-height: 1px;background: #292B30; url(connect-logo.png) 100% 0 no-repeat; background-size: auto 100%;}
+div#header {line-height: 1px;background: #292B30 url(connect-logo.png) 100% 0 no-repeat; background-size: auto 100%;}
 div#footer {font-family: Montserrat, sans-serif; font-size: 0.5em; font-weight: bold; padding: 1em 0;}
 #footer h1, #footer h2 {display: block; padding: 0 1em;}
 i {color: #3B9BDE;}
