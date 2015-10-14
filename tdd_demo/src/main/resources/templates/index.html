@@ -82,6 +82,22 @@
 			</div>
 			
 			<div class="slide">
+				<h1>Example JUnit Test</h1>
+				<ul>
+					<li>JUnit is a popular Java framework for unit testing</li>
+					<li>A typical JUnit test consists of setting up the class to test (and any dependencies), executing a method on the class, and checking for an
+					expected result (or checking that an exception is thrown, if applicable), e.g.</li>
+					<li><i>@Test<br/>
+						public void shouldDoSomething_whenSomeConditionIsMet() {<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;MyClass classToTest = setupClassToTest();<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;String result = classToTest.doSomething();<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;assertThat(result, equalTo("expected result"));<br/>
+						}</i>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
 				<h1>Hamcrest Matchers</h1>
 				<ul>
 					<li><a href="http://hamcrest.org/" target="_blank">Hamcrest</a> is a great library for writing test assertions</li>
