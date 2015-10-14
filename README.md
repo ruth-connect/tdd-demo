@@ -1,6 +1,6 @@
 # Test-Driven Development
 
-This is the slide deck and code examples for a lightning talk on Test-Driven Development for Staffs Web Meetup.
+This is the slide deck for a lightning talk on Test-Driven Development for Staffs Web Meetup.
 
 
 SETUP INSTRUCTIONS:
