@@ -1,6 +1,6 @@
 # Test-Driven Development
 
-This is the slide deck for a lightning talk on Test-Driven Development for Staffs Web Meetup.
+This is the slide deck and code examples for a talk on Test-Driven Development for NottsTest.
 
 
 SETUP INSTRUCTIONS:
@@ -17,4 +17,4 @@ SETUP INSTRUCTIONS:
 
 (c) Start the application: java -jar target/tdd_demo-0.0.1-SNAPSHOT.jar
 
-(4) Go to http://localhost:8080/ to view the slide deck
+(4) Go to http://localhost:8080/ to view the slide deck and code examples
