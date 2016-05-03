@@ -31,7 +31,7 @@
 			<div id="header"></div>
 			<div id="footer">
 				<h1>Test-Driven Development</h1>
-				<h2>Staffs Web Meetup, 15th October 2015</h2>
+				<h2>NottsTest, May the 4th (Be With You) 2016</h2>
 			</div>
 		</div>
 		
@@ -39,9 +39,22 @@
 		
 			<div class="slide">
 				<h1>Test-Driven Development</h1>
-				<h2>Staffs Web Meetup, 15th October 2015</h2>
+				<h2>NottsTest, May the 4th (Be With You) 2016</h2>
 				<h3>Ruth Mills</h3>
 				<h4>Java Lead Developer, Connect Group</h4>
+			</div>
+			
+			<div class="slide">
+				<h1>A bit about me</h1>
+				<ul>
+					<li>Lead Developer at Connect Group in Birmingham</li>
+					<li>Specialising in Java-based web development</li>
+					<li>Working on projects for Jaguar Land Rover</li>
+					<li>Living in Shrewsbury with my wife Sonia</li>
+					<li>Transgender woman</li>
+					<li>Doctor Who and Star Wars fan</li>
+					<li>Massive Raspberry Pi geek</li>
+				</ul>
 			</div>
 			
 			<div class="slide">
@@ -51,7 +64,7 @@
 					<li>Makes you think about what you are about to code before you do it</li>
 					<li>Ensures that you test error conditions as well as the "happy path"</li>
 					<li>Reduces bugs in the code and improves code quality</li>
-					<li>Reduces risk when <a href="https://en.wikipedia.org/wiki/Code_refactoring" target="_blank">refactoring</a></li>
+					<li>Reduces risk when <a href="https://en.wikipedia.org/wiki/Code_refactoring" target="_blank">refactoring</a> and making changes</li>
 					<li>Works in tandem with <a href="https://en.wikipedia.org/wiki/Behavior-driven_development" target="_blank">Behaviour-Driven Development (BDD)</a></li>
 					<li>Catches most issues at build time, before the code has a chance to go live</li>
 				</ul>
@@ -123,6 +136,18 @@
 			</div>
 			
 			<div class="slide">
+				<h1>DEMO - Fizz Buzz in Java</h1>
+				<ul>
+					<li>Fizz Buzz is a simple division game.</li>
+					<li>If a number is divisible by 3, return "Fizz".</li>
+					<li>If a number is divisible by 5, return "Buzz".</li>
+					<li>If a number is divisible by both 3 and 5, return "Fizz Buzz".</li>
+					<li>Otherwise, return the number.</li>
+					<li>We're going to code Fizz Buzz using TDD with JUnit and Hamcrest.</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
 				<h1>Using Mocks</h1>
 				<ul>
 					<li>TDD should be <b><i>unit</i></b> testing, not <b><i>integration</i></b> testing</li>
@@ -143,6 +168,17 @@
 					<li>e.g. <i>when(myMock.doSomething()).thenReturn(someObject);</i></li>
 					<li>or: <i>when(myMock.doSomething()).thenThrow(someException);</i></li>
 					<li>When writing your tests, inject the mock into the object you are testing instead of the real dependency</li>
+				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>DEMO - TDD with Mockito</h1>
+				<ul>
+					<li>A simple demo of how to use Mockito to mock a web service.</li>
+					<li>If we can't call the web service, a NotFoundException is thrown. We need to catch this exception and return a suitable error message.</li>
+					<li>If we are successful, we get a list of Star Wars films, that we need to return as a single comma-separated string.</li>
+					<li>We are only interested in how our code handles the exception and the list of Star Wars films.</li>
+					<li>We don't care about the underlying workings of the web service itself, as we aren't testing that.</li>
 				</ul>
 			</div>
 			
@@ -185,6 +221,16 @@
 			</div>
 			
 			<div class="slide">
+				<h1>DEMO - TDD with Thymeleaf</h1>
+				<ul>
+					<li>A simple demo of the TDD process in Thymeleaf.</li>
+					<li>We have an HTML page with a placeholder image and a Star Wars quote.</li>
+					<li>Using TDD, we want to replace the placeholder image and quote with actual data from the server.</li>
+					<li>We can view the example page <a href="/thymeleaf-example.html">here</a></li>
+				</ul>
+			</div>
+			
+			<div class="slide">
 				<h1>Front-End JS Testing</h1>
 				<ul>
 					<li>It's also possible to do TDD for front-end Javascript, e.g. using frameworks such as <a href="https://mochajs.org/" target="_blank">Mocha</a>, where a typical Mocha test might be:</li>
@@ -198,6 +244,10 @@
 						});</i></li>
 					<li>There's also a version of Mockito called <a href="http://jsmockito.org/" target="_blank">JsMockito</a> for use with JS</li>
 				</ul>
+			</div>
+			
+			<div class="slide">
+				<h1>DEMO - Mocha and Chai</h1>
 			</div>
 			
 			<div class="slide">
