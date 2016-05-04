@@ -13,6 +13,8 @@ import org.junit.Test;
 
 public class MockitoExampleTest {
 	
+	private static final String EXPECTED_FILMS = "These are not the films you are looking for";
+	
 	private WebServiceExample webService;
 	private MockitoExample example;
 	
@@ -26,7 +28,7 @@ public class MockitoExampleTest {
 	@Test
 	public void shouldReturnErrorMessage_WhenNotFoundExceptionIsThrown() throws Exception {
 		when(webService.getFilms()).thenThrow(new NotFoundException());
-		assertThat(example.getFilms(), equalTo("These are not the films you are looking for"));
+		assertThat(example.getFilms(), equalTo(EXPECTED_FILMS));
 	}
 	
 	@Test

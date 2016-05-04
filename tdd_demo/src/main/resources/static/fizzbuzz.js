@@ -9,7 +9,11 @@
 
   FizzBuzz.prototype = {
     toString: function() {
-      return "" + this.number;
+      if (this.number % 3 == 0) {
+    	  return "fizz";
+      } else {
+      	return "" + this.number;
+      }
     }
   };
 
